@@ -1,16 +1,244 @@
 ---
+import { Image } from "astro:assets";
 
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SpanMedium from "../components/SpanMedium.astro";
+import SkillCard from "../components/SkillCard.astro";
+
+import profileImage from "../assets/images/PsionicAlch.avif";
+import brandDomainsImage from "../assets/images/BrandDomains.avif";
+import TechListItem from "../components/TechListItem.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <main
+    class="container mx-auto flex flex-col items-center gap-20 my-20 px-10 xl:my-40 xl:w-[70vw] xl:flex-row">
+    <div class="flex-1 flex flex-col items-center">
+      <Image
+        src={profileImage}
+        alt="Profile picture of Jean-Jacques Strydom"
+        width={350}
+        height={350}
+        class="rounded-2xl border grayscale animate-colorout border-gray-200 shadow-xl hover-image w-72 lg:w-96"
+      />
+    </div>
+    <div class="flex-1">
+      <div>
+        <h2 class="text-2xl font-light text-neutral-400 md:text-4xl">
+          Full-Stack Software Developer
+        </h2>
+        <h1 class="text-xl font-extrabold text-neutral-950 md:text-3xl">
+          Jean-Jacques Strydom
+        </h1>
+      </div>
+      <p class="mt-5 mb-7">
+        It's an absolute pleasure to meet you! My name is <SpanMedium
+          >Jean-Jacques Strydom</SpanMedium
+        >. I am a full-stack software developer, prompt engineer and
+        entrepreneur from South Africa. I have been writing code since 2017 and
+        developing software since 2019. I find fulfillment in making software
+        and tutorials that people find useful and insightful. <SpanMedium>
+          I am always looking for my next project and I would love to work with
+          you to make your vision a reality
+        </SpanMedium>.
+      </p>
+
+      <a
+        href="#contact-me"
+        class="box-border px-5 py-2 bg-neutral-950 hover:bg-neutral-800 text-white font-light rounded-2xl shadow-xl">
+        Let's work together!
+      </a>
+    </div>
+  </main>
+
+  <section id="skills" class="opacity-0 container mx-auto px-10">
+    <div
+      class="flex flex-col justify-center items-center gap-10 xl:flex-row xl:justify-around xl:items-stretch">
+      <SkillCard>
+        <h3 class="text-2xl font-bold text-center">Web Development</h3>
+        <p class="text-justify">
+          My love for programming has resulted in me trying out almost every
+          programming language and web framework under the sun. I used Laravel,
+          ReactJS, InertiaJS, Typescript, PHP, and TailwindCSS for <a
+            href="https://branddomains.psionicalch.com"
+            target="_blank"
+            class="hover:underline font-medium">Brandable Domains</a
+          > and this website was made using Astro, VueJS, Typescript, and TailwindCSS.
+          I am also really good at learning new technologies so I'd be capable of
+          building your vision in whatever you want to use.
+        </p>
+      </SkillCard>
+      <SkillCard>
+        <h3 class="text-2xl font-bold text-center">Linux</h3>
+        <p class="text-justify">
+          I have heard so many stories of web developers getting enormous bills
+          from <a
+            href="https://aws.plainenglish.io/how-i-tackled-a-shocking-90-000-aws-bill-and-what-you-can-learn-from-it-e93446bf9b9d"
+            target="_blank"
+            class="hover:underline font-medium">AWS</a
+          > or <a
+            href="https://news.ycombinator.com/item?id=40618220"
+            target="_blank"
+            class="hover:underline font-medium">Vercel</a
+          > because they forgot to set up a budget or they made a mistake in their
+          program, so I personally prefer to host all of my projects on a VPS (Virtual
+          Private System). It allows me to control not only the monthly bill but
+          also the entire environment on which my projects run. Luckily for me I
+          also really love the Linux operating system so it's a match made in heaven.
+        </p>
+      </SkillCard>
+      <SkillCard>
+        <h3 class="text-2xl font-bold text-center">Docker</h3>
+        <p class="text-justify">
+          It's a common issue in the software development space that the
+          software I wrote and ran on my system doesn't run on your system.
+          There are a lot of running parts in the software development process
+          and it's hard to always keep track of everything. So for my personal
+          development and production use cases I love to use Docker. Docker
+          allows me to ensure that if it runs on my laptop it will also run on
+          my VPS and even on my client's computer. I personally run <a
+            href="https://umami.is"
+            target="_blank"
+            class="hover:underline font-medium">Umami</a
+          > (an anonymous analytics platform) and <a
+            href="https://caddyserver.com/"
+            target="_blank"
+            class="hover:underline font-medium">Caddy</a
+          > (a web server) in Docker containers on my VPS.
+        </p>
+      </SkillCard>
+    </div>
+  </section>
+
+  <section id="projects" class="container mx-auto px-10 my-20">
+    <h2 class="text-3xl font-bold mb-20">My Projects</h2>
+
+    <div
+      class="flex flex-col items-center gap-20 px-10 xl:flex-row xl:items-start">
+      <div class="w-96 flex justify-center items-center">
+        <Image
+          src={brandDomainsImage}
+          alt="The logo for Brand Domains by PsionicAlch"
+          width={350}
+          height={350}
+          class="grayscale animate-colorout border border-neutral-200 rounded-2xl shadow-xl hover-image p-5"
+        />
+      </div>
+      <div class="flex-1 flex flex-col justify-center">
+        <h3 class="text-2xl font-bold mb-5">
+          <a
+            href="https://branddomains.psionicalch.com"
+            target="_blank"
+            class="hover:underline">
+            Brand Domains
+          </a>
+        </h3>
+
+        <p class="text-justify mb-5">
+          Brand Domains was my first in a lot of ways. This was my first
+          production application that I released into the world for people to
+          use as they see fit. This was also my first venture in to the world of
+          prompt engineering and Artificial Intelligence. I made and released
+          Brand Domains in one week of intense development. It taught me a lot
+          about how to create an appealing user interface that I enjoyed to look
+          at and which I could be proud of. It taught me how to use Laravel,
+          InertiaJS, and ReactJS which was really eye opening because before
+          this project I used to make applications where the frontend would be
+          completely decoupled from the backend. I always used to think that if
+          I decoupled the server from the user interface it would allow me to
+          optimise the individual parts without needing a full system rewrite
+          but that also meant that I spent a lot of time writing a complex API
+          (Application Programming Interface) to make the two halves of the
+          application work together. InertiaJS showed me an easier way to make
+          my backend and frontend work together. With this project I got to
+          learn how to run a server in production. I got to set up my first
+          firewall to ensure I control how the outside world is allowed to
+          interact with my server and to keep the outside world from directly
+          accessing my internal docker containers. I also got the opportunity to
+          host a third-party anonymous analytics framework on my VPS (Virtual
+          Private Server) so that I can stay in full control over my user's data
+          (not that there is any sensitive data but it's still a lesson).
+        </p>
+
+        <h4 class="text-xl font-bold mb-5">Technologies used:</h4>
+
+        <ul class="list-disc list-inside">
+          <TechListItem href="https://laravel.com/">Laravel</TechListItem>
+          <TechListItem href="https://www.php.net/">PHP</TechListItem>
+          <TechListItem href="https://react.dev/">ReactJS</TechListItem>
+          <TechListItem href="https://www.typescriptlang.org/">
+            Typescript
+          </TechListItem>
+          <TechListItem href="https://inertiajs.com/">InertiaJS</TechListItem>
+          <TechListItem href="https://tailwindcss.com/">
+            TailwindCSS
+          </TechListItem>
+          <TechListItem href="https://openai.com/">OpenAI</TechListItem>
+          <TechListItem href="https://www.docker.com/">Docker</TechListItem>
+          <TechListItem href="https://umami.is/">Umami</TechListItem>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container mx-auto px-10 mb-20">
+    <div
+      class="p-10 rounded-2xl border border-neutral-200 shadow-lg text-center space-y-5">
+      <h2 class="text-3xl font-bold">Contact Me</h2>
+      <p>
+        If you want to get in touch with me you can either <a
+          href="email me"
+          id="email-btn"
+          class="font-bold hover:underline">
+          email
+        </a> me or your can message me on <a
+          href="https://x.com/psionicalch"
+          target="_blank"
+          class="hover:underline">
+          𝕏
+        </a>. I look forward to hearing from you!
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const skillsSection = document.getElementById("skills");
+  let skillsSectionShowing = false;
+
+  document.addEventListener("scroll", (_) => {
+    if (window.scrollY > 50 && !skillsSectionShowing) {
+      skillsSection?.classList.remove("opacity-0");
+      skillsSection?.classList.add(
+        "opacity-100",
+        "transition-opacity",
+        "duration-500"
+      );
+      skillsSectionShowing = true;
+    }
+  });
+
+  const images = document.getElementsByClassName("hover-image");
+  for (const image of images) {
+    image.addEventListener("mouseenter", (event) => {
+      if (event.target instanceof HTMLElement) {
+        event.target.classList.remove("grayscale", "animate-colorout");
+        event.target.classList.add("grayscale-0", "animate-colorin");
+      }
+    });
+
+    image.addEventListener("mouseleave", (event) => {
+      if (event.target instanceof HTMLElement) {
+        event.target.classList.remove("grayscale-0", "animate-colorin");
+        event.target.classList.add("grayscale", "animate-colorout");
+      }
+    });
+  }
+
+  const emailBtn = document.getElementById("email-btn");
+  emailBtn?.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    window.location.href = `mailto:${atob("amVhbi1qYWNxdWVzQHBzaW9uaWNhbGNoLmNvbQ==")}`;
+  });
+</script>

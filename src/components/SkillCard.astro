@@ -1,0 +1,12 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex flex-col gap-5 px-5 py-10 rounded-2xl border border-neutral-300 shadow-lg w-96 transition-shadow duration-500 ease-in-out hover:shadow-2xl",
+    className,
+  ]}
+  {...rest}>
+  <slot />
+</div>

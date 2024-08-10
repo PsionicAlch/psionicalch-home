@@ -1,0 +1,76 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Psionicalch by Jean-Jacques Strydom";
+const website = "https://www.psionicalch.com";
+const description =
+  "My name is Jean-Jacques Strydom. I am a full-stack software developer, prompt engineer, and entrepreneur from South Africa.";
+const keywords = [
+  "PsionicAlch",
+  "Jean-Jacques",
+  "Strydom",
+  "Developer",
+  "Prompt Engineer",
+  "Entrepreneur",
+  "Full-Stack",
+  "Typescript",
+  "Javascript",
+  "PHP",
+  "Laravel",
+  "ReactJS",
+  "TailwindCSS",
+  "InertiaJS",
+  "OpenAI",
+  "AI",
+].join(", ");
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+
+    <meta name="keywords" content={keywords} />
+
+    <meta name="author" content="Jean-Jacques Strydom" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/PsionicAlch_OG_Img.png" />
+    <meta property="og:url" content={website} />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/PsionicAlch_Twitter_Card.png" />
+    <meta name="twitter:site" content="@psionicalch" />
+
+    <link rel="canonical" href={website} />
+
+    {
+      process.env.NODE_ENV === "production" && (
+        <script
+          defer
+          src="https://umami.psionicalch.com/script.js"
+          data-website-id="aac4a633-3663-4eb5-a7eb-562666ac82a8"
+        />
+      )
+    }
+  </head>
+  <body class="bg-white text-neutral-600 font-thin">
+    <Navbar />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>
